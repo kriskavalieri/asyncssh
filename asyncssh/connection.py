@@ -278,7 +278,7 @@ class SSHConnection(SSHPacketHandler):
 
         self._local_listeners = {}
 
-        self._close_event = asyncio.Event()
+        self._close_event = asyncio.Event(loop=loop)
 
         self._server_host_key_algs = []
 
