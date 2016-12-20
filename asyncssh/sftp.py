@@ -271,7 +271,7 @@ class _SFTPFileCopier:
 
                 while self._pending:
                     done, self._pending = yield from asyncio.wait(
-                        self._pending, return_when=asyncio.FIRST_COMPLETED)
+                        self._pending, return_when=asyncio.FIRST_COMPLETED, loop=self.loop)
 
                     exceptions = [task.exception() for task in done
                                   if task.exception()]
