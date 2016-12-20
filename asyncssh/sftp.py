@@ -234,7 +234,7 @@ class _SFTPFileCopier:
     """
 
     def __init__(self, loop=None):
-	self.loop = loop
+        self.loop = loop
         self._src = None
         self._dst = None
         self._bytes_left = 0
