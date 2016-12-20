@@ -1555,7 +1555,7 @@ class SSHConnection(SSHPacketHandler):
 
         yield from self._close_event.wait()
 
-        yield from asyncio.gather(*self._tasks, return_exceptions=True)
+        yield from asyncio.gather(*self._tasks, return_exceptions=True, loop=self._loop)
 
     def disconnect(self, code, reason, lang=DEFAULT_LANG):
         """Disconnect the SSH connection
